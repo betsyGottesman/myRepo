@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>USR_userRecordTechnicalSkillsDashboard</name>
+        <uuid>_a-0000dbc9-9724-8000-9ba2-011c48011c48_196369</uuid>
+        <description>Rule for the related dashboard named 'Technical Skills' on the user record.</description>
+        <parentUuid>_a-0000d979-9cc3-8000-9ba2-011c48011c48_104775</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!pagingInfoLanguage: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1, batchSize: 100, sort:#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;language&quot;,ascending:true())),
+  local!pagingInfoPS: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1, batchSize: 100,sort:#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;skill&quot;,ascending:true())),
+  local!pagingInfoEngineering: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1, batchSize: 100,sort:#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;skill&quot;,ascending:true())),
+  local!pagingInfoSecurity: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1, batchSize: 100, sort:#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;securityLevel&quot;,ascending:true())),
+  local!username: ri!username,
+with(
+  local!datasubsetLanguage:
+  #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_195784&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;language&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;otherLanguage&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;proficiency&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;gridPlaceholder&quot;)}),
+          pagingInfo:local!pagingInfoLanguage,
+          filter:#&quot;SYSTEM_SYSRULES_queryFilter&quot;(
+            field:&quot;username&quot;,
+            operator:&quot;=&quot;,
+            value:ri!username
+          ))),
+  local!languageOtherCombined:
+  if(local!datasubsetLanguage.totalCount=0, {},
+      apply(
+      #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_196394&quot;(_,_), 
+      merge(
+        index(local!datasubsetLanguage.data, &quot;language&quot;, null),
+        index(local!datasubsetLanguage.data, &quot;otherLanguage&quot;, null)
+      )
+    )), 
+  local!datasubsetPS:
+   #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_196191&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skill&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;experience&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillUsage&quot;)}),
+          pagingInfo:local!pagingInfoPS,
+          filter:#&quot;SYSTEM_SYSRULES_queryFilter&quot;(
+            field:&quot;username&quot;,
+            operator:&quot;=&quot;,
+            value:ri!username
+          ))),
+  local!datasubsetEngineering:
+   #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbd4-c07a-8000-9ba2-011c48011c48_199821&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skill&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;experience&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillUsage&quot;)}),
+          pagingInfo:local!pagingInfoEngineering,
+          filter:#&quot;SYSTEM_SYSRULES_queryFilter&quot;(
+            field:&quot;username&quot;,
+            operator:&quot;=&quot;,
+            value:ri!username
+          ))),
+local!datasubsetSecurity:
+#&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbec-a924-8000-9ba2-011c48011c48_209802&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;securityLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;comments&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;dateofExpiration&quot;)}),
+          pagingInfo:local!pagingInfoSecurity,
+          filter:#&quot;SYSTEM_SYSRULES_queryFilter&quot;(
+            field:&quot;username&quot;,
+            operator:&quot;=&quot;,
+            value:ri!username
+          ))),
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+    firstColumnContents: {
+      if(local!datasubsetLanguage.totalCount=0,{},
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;Language Skills&quot;,
+        firstColumnContents:{
+        #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          label:&quot;&quot;,
+          totalCount: local!datasubsetLanguage.totalCount,
+          columns: {
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Language&quot;,
+              field: &quot;language&quot;,
+              data: local!languageOtherCombined
+            ),
+               #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Proficiency Level&quot;,
+              field: &quot;proficiency&quot;,
+              data: index(local!datasubsetLanguage.data, &quot;proficiency&quot;, null)
+            )
+            
+          
+        },
+          value:local!pagingInfoLanguage,
+          saveInto:local!pagingInfoLanguage
+        )},
+        secondColumnContents:{
+          
+        },
+        isCollapsible:true
+      )),
+            if(local!datasubsetSecurity.totalCount=0,{},
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;Security Clearance&quot;,
+        firstColumnContents:{
+        #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          label:&quot;&quot;,
+          totalCount: local!datasubsetSecurity.totalCount,
+          columns: {
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Clearance Level&quot;,
+              field: &quot;securityLevel&quot;,
+              data: index(local!datasubsetSecurity.data, &quot;securityLevel&quot;, null)
+            ),
+               #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Comments&quot;,
+              field: &quot;comments&quot;,
+              data: index(local!datasubsetSecurity.data, &quot;comments&quot;, null)
+            ),
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Date of Expiration&quot;,
+              field: &quot;dateofExpiration&quot;,
+              data: #&quot;_a-0000d981-73a0-8000-9ba2-011c48011c48_66825&quot;(index(local!datasubsetSecurity.data, &quot;dateofExpiration&quot;, null))
+            )
+            
+          
+        },
+          value:local!pagingInfoLanguage,
+          saveInto:local!pagingInfoLanguage
+        )},
+        secondColumnContents:{
+          
+        },
+        isCollapsible:true
+      )),
+      if(local!datasubsetPS.totalCount=0,{},
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;Professional Services Skills&quot;,
+        firstColumnContents:{
+        #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          label:&quot;&quot;,
+          totalCount: local!datasubsetPS.totalCount,
+          columns: {
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill&quot;,
+              field: &quot;skill&quot;,
+              data: index(local!datasubsetPS.data, &quot;skill&quot;, null)
+            ),
+               #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill Level&quot;,
+              field: &quot;skillLevel&quot;,
+              data: index(local!datasubsetPS.data, &quot;skillLevel&quot;, null)
+            ),
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Experience&quot;,
+              field: &quot;experience&quot;,
+              data: index(local!datasubsetPS.data, &quot;experience&quot;, null)
+            ),
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill Usage&quot;,
+              field: &quot;skillUsage&quot;,
+              data: index(local!datasubsetPS.data, &quot;skillUsage&quot;, null)
+            )
+            
+          
+        },
+          value:local!pagingInfoPS,
+          saveInto:local!pagingInfoPS
+        )
+        },
+        isCollapsible:true
+
+      )),
+      if(local!datasubsetEngineering.totalCount=0,{},
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;Engineering Skills&quot;,
+        firstColumnContents:{
+        #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          label:&quot;&quot;,
+          totalCount: local!datasubsetEngineering.totalCount,
+          columns: {
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill&quot;,
+              field: &quot;skill&quot;,
+              data: index(local!datasubsetEngineering.data, &quot;skill&quot;, null)
+            ),
+               #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill Level&quot;,
+              field: &quot;skillLevel&quot;,
+              data: index(local!datasubsetEngineering.data, &quot;skillLevel&quot;, null)
+            ),
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Experience&quot;,
+              field: &quot;experience&quot;,
+              data:index(local!datasubsetEngineering.data, &quot;experience&quot;, null)
+            ),
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill Usage&quot;,
+              field: &quot;skillUsage&quot;,
+              data: index(local!datasubsetEngineering.data, &quot;skillUsage&quot;, null)
+            )
+            
+          
+        },
+          value:local!pagingInfoEngineering,
+          saveInto:local!pagingInfoEngineering
+        )
+        },
+        isCollapsible:true
+
+      ))
+      
+    }
+  )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>username</name>
+            <type>
+                <name>User</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>noah.singh</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:User">gabriella.lujan</a:value>
+                    <a:nameRef>username</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+</contentHaul>

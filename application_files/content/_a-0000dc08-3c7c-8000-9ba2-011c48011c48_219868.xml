@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>USR_applyTooltipTextToSecClearance</name>
+        <uuid>_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868</uuid>
+        <description>Loops over the security clearance tooltip text rule and applies it to all the security clearances for a given user.</description>
+        <parentUuid>_a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>with(
+  
+/*local!datasubsetSecurity:*/
+/*a!queryEntity(*/
+/*      entity: cons!USR_ABOUT_ME_SECURITY_CLEARANCE_DATASTORE_ENTITY,*/
+/*      query: a!query(*/
+/*        selection: a!querySelection(columns: {*/
+/*          a!queryColumn(field: &quot;id&quot;),*/
+/*          a!queryColumn(field: &quot;username&quot;),*/
+/*          a!queryColumn(field: &quot;securityLevel&quot;),*/
+/*          a!queryColumn(field: &quot;comments&quot;),*/
+/*          a!queryColumn(field: &quot;dateofExpiration&quot;)}),*/
+/*          pagingInfo:topaginginfo(1,-1)*/
+          
+/*          )),*/
+    local!usernameIndex: wherecontains(ri!username, touniformstring(index(ri!datasubsetForToolTip.data, &quot;username&quot;, null))),
+    local!findUsersClearance: index(ri!datasubsetForToolTip.data, local!usernameIndex, null),
+    local!clearanceIndexByUserName: index(local!findUsersClearance, &quot;securityLevel&quot;, null),
+    local!dateOfExpirationIndexByUserName: index(local!findUsersClearance, &quot;dateofExpiration&quot;, null),
+    
+          {
+          
+ &quot;Security Clearance: &quot; &amp;            
+if(#&quot;a2fe4fc4-9e45-45b1-9207-336d29599435&quot;(local!usernameIndex), &quot;None&quot;, 
+   apply(#&quot;_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873&quot;(
+      clearance: local!clearanceIndexByUserName,
+      dateOfExpiration: local!dateOfExpirationIndexByUserName,
+      index:_), enumerate(length(local!usernameIndex))+1)
+)
+          }
+    
+    
+)</definition>
+        <namedTypedValue>
+            <name>username</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>datasubsetForToolTip</name>
+            <type>
+                <name>DataSubset</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

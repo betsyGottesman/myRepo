@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>USR_technicalSkillsReport</name>
+        <uuid>_a-0000dbff-8321-8000-9ba2-011c48011c48_216465</uuid>
+        <description>This report allows a user to search for employees with specific skills.</description>
+        <parentUuid>_a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=load(
+  local!searchedUser,
+  local!securityClearance,
+  local!securityClearanceExpDate,
+  local!language, 
+  local!proficiency, 
+  local!psSkill, 
+  local!psSkillLevel, 
+  local!engSkill,   
+  local!engSkillLevel,
+  local!pagingInfoForGridsOnUserSearch:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1,batchSize: 25,sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(field: &quot;username&quot;, ascending: true)),
+  local!pagingInfoForEngGrid:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1,batchSize: 25,sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(field: &quot;username&quot;, ascending: true)), 
+  local!pagingInfoForPSGrid:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1,batchSize: 25,sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(field: &quot;username&quot;,ascending: true)),
+  local!pagingInfoForLanguageGrid:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1,batchSize: 25,sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(field: &quot;username&quot;, ascending: true)),
+  local!pagingInfoForClearanceGrid:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1,batchSize: 25,sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(field: &quot;username&quot;,ascending: true)),
+  
+  
+  
+with(
+  local!datasubsetLanguage:
+      #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_195784&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;language&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;otherLanguage&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;proficiency&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;gridPlaceholder&quot;)}),
+          pagingInfo: local!pagingInfoForLanguageGrid,
+          logicalExpression: #&quot;SYSTEM_SYSRULES_queryLogicalExpression&quot;(
+            operator: &quot;AND&quot;,
+            filters: {
+              if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(local!language), #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;language&quot;, operator:&quot;not null&quot;), 
+          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;language&quot;, operator:&quot;=&quot;, value: local!language)
+          ),
+            if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(local!proficiency), #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;proficiency&quot;, operator:&quot;not null&quot;), 
+          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;proficiency&quot;, operator:&quot;=&quot;, value: local!proficiency)
+          )
+            /*if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:&quot;username&quot;, operator:&quot;not null&quot;), */
+          /*a!queryFilter(field:&quot;username&quot;, operator:&quot;=&quot;, value: tostring(local!searchedUser))*/
+          /*)*/
+            })
+          )),
+  local!languageOtherCombined:
+    if(local!datasubsetLanguage.totalCount=0, {},
+      apply(
+      #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_196394&quot;(_,_), 
+      merge(
+        index(local!datasubsetLanguage.data, &quot;language&quot;, null),
+        index(local!datasubsetLanguage.data, &quot;otherLanguage&quot;, null)
+      )
+    )), 
+  local!datasubsetPS:
+    #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_196191&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skill&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;experience&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillUsage&quot;)}),
+          pagingInfo:local!pagingInfoForPSGrid,
+          logicalExpression: #&quot;SYSTEM_SYSRULES_queryLogicalExpression&quot;(
+            operator: &quot;AND&quot;,
+            filters: {
+              if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(local!psSkill), #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skill&quot;, operator:&quot;not null&quot;), 
+          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skill&quot;, operator:&quot;=&quot;, value: local!psSkill)),
+            if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(local!psSkillLevel), #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skillLevel&quot;, operator:&quot;not null&quot;), 
+          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skillLevel&quot;, operator:&quot;=&quot;, value: local!psSkillLevel))
+          /*  if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:&quot;username&quot;, operator:&quot;not null&quot;), */
+          /*a!queryFilter(field:&quot;username&quot;, operator:&quot;=&quot;, value: tostring(local!searchedUser)))*/
+          })
+          )),
+  local!datasubsetEngineering:
+     #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbd4-c07a-8000-9ba2-011c48011c48_199821&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skill&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;experience&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillUsage&quot;)}),
+          pagingInfo:local!pagingInfoForEngGrid,
+          logicalExpression: #&quot;SYSTEM_SYSRULES_queryLogicalExpression&quot;(
+            operator: &quot;AND&quot;,
+            filters: {
+              if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(local!engSkill), #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skill&quot;, operator:&quot;not null&quot;), 
+          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skill&quot;, operator:&quot;=&quot;, value: local!engSkill)),
+          /*  if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:&quot;username&quot;, operator:&quot;not null&quot;), */
+          /*a!queryFilter(field:&quot;username&quot;, operator:&quot;=&quot;, value: tostring(local!searchedUser))*/
+          /*),*/
+            if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(local!engSkillLevel), #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skillLevel&quot;, operator:&quot;not null&quot;), 
+          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;skillLevel&quot;, operator:&quot;=&quot;, value: local!engSkillLevel))
+            })
+          )),
+  local!datasubsetSecurity:
+     #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbec-a924-8000-9ba2-011c48011c48_209802&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;securityLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;comments&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;dateofExpiration&quot;)}),
+          pagingInfo:local!pagingInfoForClearanceGrid,
+          logicalExpression: #&quot;SYSTEM_SYSRULES_queryLogicalExpression&quot;(
+            operator: &quot;AND&quot;,
+            filters: {
+              if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_950&quot;(local!securityClearance), #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;securityLevel&quot;, operator:&quot;not null&quot;), 
+          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;securityLevel&quot;, operator:&quot;=&quot;, value: local!securityClearance))
+          /*  if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:&quot;username&quot;, operator:&quot;not null&quot;), */
+          /*a!queryFilter(field:&quot;username&quot;, operator:&quot;=&quot;, value: tostring(local!searchedUser))*/
+          /*)*/
+            })
+          )),
+  local!datasubsetSecurityForToolTip:
+     #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbec-a924-8000-9ba2-011c48011c48_209802&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;securityLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;comments&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;dateofExpiration&quot;)}),
+          pagingInfo: topaginginfo(1,-1)
+          )),
+  local!datasubsetEngineeringForToolTip:
+    #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbd4-c07a-8000-9ba2-011c48011c48_199821&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skill&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;experience&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillUsage&quot;)}),
+          pagingInfo: topagingInfo(1,-1)
+          )),
+  local!datasubsetPSForToolTip:
+    #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_196191&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skill&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillLevel&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;experience&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;skillUsage&quot;)}),
+          pagingInfo: topagingInfo(1,-1)
+          )), 
+  local!datasubsetLanguageForToolTip:
+    #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+      entity: #&quot;_a-0000dbc9-9724-8000-9ba2-011c48011c48_195784&quot;,
+      query: #&quot;SYSTEM_SYSRULES_query&quot;(
+        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;username&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;language&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;otherLanguage&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;proficiency&quot;),
+          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;gridPlaceholder&quot;)}),
+          pagingInfo: topaginginfo(1,-1)
+          )),
+          
+          /*END OF LOCAL VARIABLES*/
+          
+    #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+      firstColumnContents:
+         {
+          /*a!sectionLayout(*/
+          /*  firstColumnContents:*/
+          /*  {*/
+          /*    a!pickerFieldUsers(*/
+          /*      label: &quot;Employee&quot;,*/
+          /*      labelPosition: &quot;ABOVE&quot;,*/
+          /*      placeholder: &quot;Search for an employee here.&quot;,*/
+          /*      maxSelections: 1,*/
+          /*      value: local!searchedUser,*/
+          /*      saveInto: local!searchedUser*/
+
+          /*    )*/
+          /*  }*/
+          /* ),*/
+          
+           /*END OF PERSON SEARCH SECTION*/
+           
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            label:&quot;Languages&quot;,
+            firstColumnContents:
+            
+            {        
+              #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                placeholderLabel:&quot;All Languages&quot;,
+                
+                choiceLabels:#&quot;_a-0000dbbd-00d5-8000-9ba2-011c48011c48_188524&quot;, 
+                choiceValues:#&quot;_a-0000dbbd-00d5-8000-9ba2-011c48011c48_188524&quot;, 
+                value:local!language,
+                saveInto:{
+                  local!language,
+                  a!save(local!pagingInfoForLanguageGrid.startIndex,1)
+                }
+            ),
+              #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                placeholderLabel:&quot;All Proficiency Levels&quot;, 
+                choiceLabels: {&quot;Business&quot;, &quot;Conversational&quot;, &quot;Native&quot;}, 
+                choiceValues: {&quot;Business&quot;, &quot;Conversational&quot;, &quot;Native&quot;}, 
+                value:local!proficiency,
+                saveInto:{
+                  local!proficiency,
+                  a!save(local!pagingInfoForLanguageGrid.startIndex,1)
+                }
+              ),
+        /* Show a message if no data in DB, else show grid */      
+        if(local!datasubsetLanguage.totalCount=0,
+        #&quot;SYSTEM_SYSRULES_gridField&quot;(label: &quot;&quot;, totalCount: local!datasubsetLanguage.totalCount, emptyGridMessage: &quot;No employees found&quot;,
+          columns: { #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Employee Name&quot;,field: &quot;username&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Language&quot;,field: &quot;language&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Proficiency Level&quot;,field: &quot;proficiency&quot;, data: {}),
+                    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;All Listed Languages&quot;,field: &quot;language&quot;, data: {})
+          },
+          value:local!pagingInfoForLanguageGrid,
+          saveInto:local!pagingInfoForLanguageGrid
+          ),
+        #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          label:&quot;&quot;,
+          totalCount: local!datasubsetLanguage.totalCount,
+          emptyGridMessage: &quot;No employees found&quot;,
+          columns: {
+            
+            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Employee Name&quot;,
+              field: &quot;username&quot;,
+              data: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetLanguage.data, &quot;username&quot;, null)),{},
+                    apply(#&quot;_a-0000d690-12fb-8000-0f1a-010000010000_1352&quot;(_), index(local!datasubsetLanguage.data, &quot;username&quot;, null))),
+              links: {
+                      if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetLanguage.data, &quot;username&quot;, null)), {}, 
+                      apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
+                      label:&quot;&quot;,
+                      user: _,
+                      view: &quot;summary&quot;
+                      ), index(local!datasubsetLanguage.data, &quot;username&quot;, null)))}
+            ),
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Language&quot;,
+              field: &quot;language&quot;,
+              data: local!languageOtherCombined
+            ),
+               #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Proficiency Level&quot;,
+              field: &quot;proficiency&quot;,
+              data: index(local!datasubsetLanguage.data, &quot;proficiency&quot;, null)
+            ),
+                  #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
+          label: &quot;All Listed Languages&quot;,
+          field: &quot;language&quot;,
+          size: &quot;ICON&quot;,
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:_, caption:_, link: _),
+			  merge(
+				apply(#&quot;_a-0000dbc0-2835-8000-9ba2-011c48011c48_192221&quot;,index(local!datasubsetLanguage.data, &quot;language&quot;, null) ,#&quot;_a-0000dbb5-c42e-8000-9ba2-011c48011c48_187030&quot;,#&quot;SYSTEM_SYSRULES_iconIndicator&quot;(&quot;REMOVE_DISABLED&quot;)),
+				
+				#&quot;SYSTEM_SYSRULES_applyComponents&quot;(#&quot;_a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051&quot;(username: _, datasubsetForToolTip: local!datasubsetLanguageForToolTip), 
+				                index(local!datasubsetLanguage.data, &quot;username&quot;, null)), 
+				  
+				apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(label:&quot;&quot;,user: _,view: &quot;_3YQ6Sg&quot;), index(local!datasubsetLanguage.data, &quot;username&quot;, null))
+				))
+				          ) 
+            
+          
+        },
+          value:local!pagingInfoForLanguageGrid,
+          saveInto:local!pagingInfoForLanguageGrid
+        ))
+            },
+            isCollapsible: true
+          ),
+          /* END OF LANGUAGE SECTION */
+          
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            label:&quot;Security Clearance&quot;,
+            firstColumnContents:
+            
+            {
+              #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                placeholderLabel:&quot;All Clearance Levels&quot;,
+                
+                choiceLabels:#&quot;_a-0000dbec-6cab-8000-9ba2-011c48011c48_209765&quot;, 
+                choiceValues:#&quot;_a-0000dbec-6cab-8000-9ba2-011c48011c48_209765&quot;, 
+                value:local!securityClearance,
+                saveInto:{
+                  local!securityClearance,
+                  a!save(local!pagingInfoForClearanceGrid.startIndex,1)
+                }
+            ),
+     
+              if(local!datasubsetSecurity.totalCount=0,
+              #&quot;SYSTEM_SYSRULES_gridField&quot;(label: &quot;&quot;, totalCount: local!datasubsetSecurity.totalCount, emptyGridMessage: &quot;No employees found&quot;,
+          columns: { #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Employee Name&quot;,field: &quot;username&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Clearance Level&quot;,field: &quot;securityLevel&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Comments&quot;,field: &quot;comments&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Date of Expiration&quot;,field: &quot;dateofExpiration&quot;, data: {}),
+                    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;All Listed Clearances&quot;,field: &quot;securityLevel&quot;,data: {})
+          },
+          value:local!pagingInfoForClearanceGrid,
+          saveInto:local!pagingInfoForClearanceGrid
+          ),
+              #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          label:&quot;&quot;,
+          totalCount: if(local!datasubsetSecurity.totalCount=0, 1, local!datasubsetSecurity.totalCount),
+          columns: {
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Employee Name&quot;,
+              field: &quot;username&quot;,
+              data:  if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetSecurity.data, &quot;username&quot;, null)),{},
+              apply(#&quot;_a-0000d690-12fb-8000-0f1a-010000010000_1352&quot;(_), index(local!datasubsetSecurity.data, &quot;username&quot;, null))),
+              links: {
+                
+                if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetSecurity.data, &quot;username&quot;, null)), {}, 
+                apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
+                      label:&quot;&quot;,
+                      user: _,
+                      view: &quot;summary&quot;
+                      ), index(local!datasubsetSecurity.data, &quot;username&quot;, null)))}
+            ),            
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Clearance Level&quot;,
+              field: &quot;securityLevel&quot;,
+              data: index(local!datasubsetSecurity.data, &quot;securityLevel&quot;, null)
+            ),
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Comments&quot;,
+              field: &quot;comments&quot;,
+              data: index(local!datasubsetSecurity.data, &quot;comments&quot;, null)
+            ),
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Date of Expiration&quot;,
+              field: &quot;dateofExpiration&quot;,
+              data: #&quot;_a-0000d981-73a0-8000-9ba2-011c48011c48_66825&quot;(index(local!datasubsetSecurity.data, &quot;dateofExpiration&quot;, null))
+            ),
+              #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
+          label: &quot;All Clearances&quot;,
+          field: &quot;securityLevel&quot;,
+          size: &quot;ICON&quot;,
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:_, caption:_, link: _),
+			  merge(
+				apply(#&quot;_a-0000dbc0-2835-8000-9ba2-011c48011c48_192221&quot;,index(local!datasubsetSecurity.data, &quot;securityLevel&quot;, null) ,#&quot;_a-0000dbb5-c42e-8000-9ba2-011c48011c48_187030&quot;,#&quot;SYSTEM_SYSRULES_iconIndicator&quot;(&quot;REMOVE_DISABLED&quot;)),
+				
+				#&quot;SYSTEM_SYSRULES_applyComponents&quot;(#&quot;_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868&quot;(username: _, datasubsetForToolTip: local!datasubsetSecurityForToolTip), 
+				                index(local!datasubsetSecurity.data, &quot;username&quot;, null)), 
+				  
+				apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(label:&quot;&quot;,user: _,view: &quot;_3YQ6Sg&quot;), index(local!datasubsetSecurity.data, &quot;username&quot;, null))
+				))
+				                  ) 
+            
+          
+        },
+          value:local!pagingInfoForClearanceGrid,
+          saveInto:local!pagingInfoForClearanceGrid
+        ))
+            },
+            isCollapsible: true
+          ),
+          /* END OF CLEARANCE SECTION*/
+          
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            label:&quot;Professional Services Skills&quot;,
+            isCollapsible: true,
+            firstColumnContents:
+            
+            {#&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                placeholderLabel:&quot;All Skills&quot;,
+                choiceLabels: #&quot;_a-0000dbc6-e0f1-8000-9ba2-011c48011c48_195158&quot;, 
+                choiceValues:#&quot;_a-0000dbc6-e0f1-8000-9ba2-011c48011c48_195158&quot;, 
+                value:local!psSkill, 
+                saveInto:{
+                  local!psSkill, 
+                  a!save(local!pagingInfoForPSGrid.startIndex,1)
+                }
+            ),
+              #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                placeholderLabel:&quot;All Skill Levels&quot;, 
+                choiceLabels:#&quot;_a-0000dbc6-e0f1-8000-9ba2-011c48011c48_195156&quot;, 
+                choiceValues:#&quot;_a-0000dbc6-e0f1-8000-9ba2-011c48011c48_195156&quot;, 
+                value:local!psSkillLevel, 
+                saveInto:{
+                  local!psSkillLevel, 
+                  a!save(local!pagingInfoForPSGrid.startIndex,1)
+                }
+              ),
+              if(local!datasubsetPS.totalCount=0,
+              #&quot;SYSTEM_SYSRULES_gridField&quot;(label: &quot;&quot;, totalCount: local!datasubsetPS.totalCount, emptyGridMessage: &quot;No employees found&quot;,
+          columns: { #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Employee Name&quot;,field: &quot;username&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Skill&quot;,field: &quot;skill&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Skill Level&quot;,field: &quot;skillLevel&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Experience&quot;,field: &quot;experience&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Skill Usage&quot;,field: &quot;skillUsage&quot;, data: {}),
+                    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;All Listed Skills&quot;,field: &quot;skill&quot;,data: {})
+          },
+          value:local!pagingInfoForPSGrid,
+          saveInto:local!pagingInfoForPSGrid
+          ),
+              #&quot;SYSTEM_SYSRULES_gridField&quot;(
+                label:&quot;&quot;,
+                totalCount: local!datasubsetPS.totalCount,
+                emptyGridMessage: &quot;No employees found&quot;,
+                columns: {
+                  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label: &quot;Employee Name&quot;,
+                    field: &quot;username&quot;,
+                    data: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetPS.data, &quot;username&quot;, null)),{},
+              apply(#&quot;_a-0000d690-12fb-8000-0f1a-010000010000_1352&quot;(_), index(local!datasubsetPS.data, &quot;username&quot;, null))),
+                    links: {
+                      if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetPS.data, &quot;username&quot;, null)), {},
+                      apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
+                      label:&quot;&quot;,
+                      user: _,
+                      view: &quot;summary&quot;
+                      ), index(local!datasubsetPS.data, &quot;username&quot;, null)))}
+                  ),
+                   #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label: &quot;Skill&quot;,
+                    field: &quot;skill&quot;,
+                    data: index(local!datasubsetPS.data, &quot;skill&quot;, null)
+                  ),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label: &quot;Skill Level&quot;,
+                    field: &quot;skillLevel&quot;,
+                    data: index(local!datasubsetPS.data, &quot;skillLevel&quot;, null)
+                  ),
+                    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label: &quot;Experience&quot;,
+                    field: &quot;experience&quot;,
+                    data: index(local!datasubsetPS.data, &quot;experience&quot;, null)
+                  ),
+                   #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label: &quot;Skill Usage&quot;,
+                    field: &quot;skillUsage&quot;,
+                    data:  index(local!datasubsetPS.data, &quot;skillUsage&quot;, null)
+                  ),
+
+        #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
+          label: &quot;All Listed Skills&quot;,
+          field: &quot;skill&quot;,
+          size: &quot;ICON&quot;,
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:_, caption:_, link: _),
+			  merge(
+				apply(#&quot;_a-0000dbc0-2835-8000-9ba2-011c48011c48_192221&quot;,index(local!datasubsetPS.data, &quot;skill&quot;, null) ,#&quot;_a-0000dbb5-c42e-8000-9ba2-011c48011c48_187030&quot;,#&quot;SYSTEM_SYSRULES_iconIndicator&quot;(&quot;REMOVE_DISABLED&quot;)),
+				
+				#&quot;SYSTEM_SYSRULES_applyComponents&quot;(#&quot;_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855&quot;(username: _, datasubsetForToolTip: local!datasubsetPSForToolTip), 
+				                index(local!datasubsetPS.data, &quot;username&quot;, null)), 
+				  
+				apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(label:&quot;&quot;,user: _,view: &quot;_3YQ6Sg&quot;), index(local!datasubsetPS.data, &quot;username&quot;, null))
+				))
+				                  ) 
+                 },
+                value:local!pagingInfoForPSGrid,
+                saveInto:local!pagingInfoForPSGrid
+              ))
+            }
+          ),
+          
+          /*END OF PS SKILLS SECTION*/
+          
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            label:&quot;Engineering Skills&quot;,
+            isCollapsible: true,
+            firstColumnContents:
+            {
+              #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                placeholderLabel:&quot;All Skills&quot;,
+                
+                choiceLabels: #&quot;_a-0000dbd4-c07a-8000-9ba2-011c48011c48_199811&quot;, 
+                choiceValues: #&quot;_a-0000dbd4-c07a-8000-9ba2-011c48011c48_199811&quot;, 
+                value:local!engSkill, 
+                saveInto:{
+                  local!engSkill, 
+                  a!save(local!pagingInfoForEngGrid.startIndex,1)
+                }
+              ),
+              #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+                label:&quot;&quot;,
+                labelPosition:&quot;COLLAPSED&quot;,
+                placeholderLabel:&quot;All Skill Levels&quot;, 
+                choiceLabels: #&quot;_a-0000dbd4-c07a-8000-9ba2-011c48011c48_199819&quot;, 
+                choiceValues: #&quot;_a-0000dbd4-c07a-8000-9ba2-011c48011c48_199819&quot;, 
+                value:local!engSkillLevel, 
+                saveInto:{
+                  local!engSkillLevel, 
+                  a!save(local!pagingInfoForEngGrid.startIndex,1)
+                }
+              ),
+              if(local!datasubsetEngineering.totalCount=0,
+              #&quot;SYSTEM_SYSRULES_gridField&quot;(label: &quot;&quot;, totalCount: local!datasubsetEngineering.totalCount, emptyGridMessage: &quot;No employees found&quot;,
+          columns: { #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Employee Name&quot;,field: &quot;username&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Skill&quot;,field: &quot;skill&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Skill Level&quot;,field: &quot;skillLevel&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Experience&quot;,field: &quot;experience&quot;, data: {}),
+                     #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Skill Usage&quot;,field: &quot;skillUsage&quot;, data: {}),
+                    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;All Listed Skills&quot;,field: &quot;skill&quot;,data: {})
+          },
+          value:local!pagingInfoForEngGrid,
+          saveInto:local!pagingInfoForEngGrid
+          ),
+              #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          label:&quot;&quot;,
+          totalCount: local!datasubsetEngineering.totalCount,
+          emptyGridMessage: &quot;No employees found&quot;,
+          columns: {
+            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Employee Name&quot;,
+              field: &quot;username&quot;,
+                    data: if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetEngineering.data, &quot;username&quot;, null)),{},
+              apply(#&quot;_a-0000d690-12fb-8000-0f1a-010000010000_1352&quot;(_), index(local!datasubsetEngineering.data, &quot;username&quot;, null))),
+                    links: {
+                      if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(index(local!datasubsetEngineering.data, &quot;username&quot;, null)), {},
+                      apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
+                      label:&quot;&quot;,
+                      user: _,
+                      view: &quot;summary&quot;
+                      ), index(local!datasubsetEngineering.data, &quot;username&quot;, null)))}
+            ),
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill&quot;,
+              field: &quot;skill&quot;,
+              data: index(local!datasubsetEngineering.data, &quot;skill&quot;, null)
+            ),
+               #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill Level&quot;,
+              field: &quot;skillLevel&quot;,
+              data: index(local!datasubsetEngineering.data, &quot;skillLevel&quot;, null)
+            ),
+              #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Experience&quot;,
+              field: &quot;experience&quot;,
+              data:index(local!datasubsetEngineering.data, &quot;experience&quot;, null)
+            ),
+             #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+              label: &quot;Skill Usage&quot;,
+              field: &quot;skillUsage&quot;,
+              data: index(local!datasubsetEngineering.data, &quot;skillUsage&quot;, null)
+            ),
+            #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
+          label: &quot;All Listed Skills&quot;,
+          field: &quot;skill&quot;,
+          size: &quot;ICON&quot;,
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:_, caption:_, link: _),
+			  merge(
+				apply(#&quot;_a-0000dbc0-2835-8000-9ba2-011c48011c48_192221&quot;,index(local!datasubsetEngineering.data, &quot;skill&quot;, null) ,#&quot;_a-0000dbb5-c42e-8000-9ba2-011c48011c48_187030&quot;,#&quot;SYSTEM_SYSRULES_iconIndicator&quot;(&quot;REMOVE_DISABLED&quot;)),
+				
+				#&quot;SYSTEM_SYSRULES_applyComponents&quot;(#&quot;_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855&quot;(username: _, datasubsetForToolTip: local!datasubsetEngineeringForToolTip), 
+				                index(local!datasubsetEngineering.data, &quot;username&quot;, null)), 
+				  
+				apply(#&quot;SYSTEM_SYSRULES_userRecordLink&quot;(label:&quot;&quot;,user: _,view: &quot;_3YQ6Sg&quot;), index(local!datasubsetEngineering.data, &quot;username&quot;, null))
+				))) 
+        },
+          value:local!pagingInfoForEngGrid,
+          saveInto:local!pagingInfoForEngGrid
+        ))
+            }
+          )
+          /*END OF ENG SKILLS SECTION*/
+         }
+         
+       )
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+</contentHaul>

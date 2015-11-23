@@ -1,0 +1,1308 @@
+Success (12):
+content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 "USR_userRecordTechnicalSkillsDashboard"
+content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 "USR Employee Skills Report Rules"
+content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 "USR_createTextForTooltipsInTechSkillReportForLanguage"
+content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 "USR_applyTooltipTextToAllSkillsAndLevelsForLanguage"
+content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 "USR_createTextForTooltipsInTechSkillReportForSecClearance"
+content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 "USR_applyTooltipTextToSecClearance"
+content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 "USR_createTextForTooltipsInTechSkillReport"
+content 221889 122e14c8-327c-4a62-860b-31ba363563a9 "USR_applyTooltipTextToAllSkillsAndLevels"
+content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 "USR_applyTooltipTextToAllSkillsAndLevelsForEng"
+content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 "USR_applyTooltipTextToAllSkillsAndLevelsForPS"
+content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 "USR_technicalSkillsReport"
+tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba "Employee Skills"
+
+Referenced precedents that were not exported (22):
+user noah.singh noah.singh
+user gabriella.lujan gabriella.lujan
+user elizabeth.gottesman elizabeth.gottesman
+content 212368 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196394
+content 91413 _a-0000d981-73a0-8000-9ba2-011c48011c48_66825
+content 216090 _a-0000dbec-a924-8000-9ba2-011c48011c48_209802
+content 212367 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196191
+content 212366 _a-0000dbd4-c07a-8000-9ba2-011c48011c48_199821
+content 212365 _a-0000dbc9-9724-8000-9ba2-011c48011c48_195784
+content 89613 _a-0000d979-9cc3-8000-9ba2-011c48011c48_104775
+content 153538 a2fe4fc4-9e45-45b1-9207-336d29599435
+content 27202 _a-0000d62a-67b3-8000-da6f-010000010000_950
+content 22405 _a-0000d690-12fb-8000-0f1a-010000010000_1352
+content 212393 _a-0000dbec-6cab-8000-9ba2-011c48011c48_209765
+content 212340 _a-0000dbbd-00d5-8000-9ba2-011c48011c48_188524
+content 203448 _a-0000dbb5-c42e-8000-9ba2-011c48011c48_187030
+content 203455 _a-0000dbc0-2835-8000-9ba2-011c48011c48_192221
+content 212383 _a-0000dbd4-c07a-8000-9ba2-011c48011c48_199811
+content 212350 _a-0000dbc6-e0f1-8000-9ba2-011c48011c48_195156
+content 212382 _a-0000dbd4-c07a-8000-9ba2-011c48011c48_199819
+content 212349 _a-0000dbc6-e0f1-8000-9ba2-011c48011c48_195158
+content 22431 _a-0000d62a-67b3-8000-da6f-010000010000_951
+
+Trace:
+2015-11-18 20:50:19.495 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Begin transport.
+2015-11-18 20:50:19.495 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Retrieving object data.
+2015-11-18 20:50:19.513 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Setting uuids of object references.
+2015-11-18 20:50:19.513 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: [Content:id=212369,versionId=-1,name=USR_userRecordTechnicalSkillsDashboard,description=Rule for the related dashboard named 'Technical Skills' on the user record.,type=32,subtype=1,uuid=_a-0000dbc9-9724-8000-9ba2-011c48011c48_196369,parent=89613,parentName=User Record Rules,parentType=2,log=221882,logName=USR_userRecordTechnicalSkillsDashboard,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:57.0,updatedTimestamp=2015-11-18 20:11:58.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@57b8dcc0, system=0, preferredEditor=interface, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@70dc1a95, definition=load(
+  local!pagingInfoLanguage: a!pagingInfo(startIndex: 1, batchSize: 100, sort:a!sortInfo(field:"language",ascending:true())),
+  local!pagingInfoPS: a!pagingInfo(startIndex: 1, batchSize: 100,sort:a!sortInfo(field:"skill",ascending:true())),
+  local!pagingInfoEngineering: a!pagingInfo(startIndex: 1, batchSize: 100,sort:a!sortInfo(field:"skill",ascending:true())),
+  local!pagingInfoSecurity: a!pagingInfo(startIndex: 1, batchSize: 100, sort:a!sortInfo(field:"securityLevel",ascending:true())),
+  local!username: ri!username,
+with(
+  local!datasubsetLanguage:
+  a!queryEntity(
+      entity: cons!USR_ABOUT_ME_LANGUAGES_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "language"),
+          a!queryColumn(field: "otherLanguage"),
+          a!queryColumn(field: "proficiency"),
+          a!queryColumn(field: "gridPlaceholder")}),
+          pagingInfo:local!pagingInfoLanguage,
+          filter:a!queryFilter(
+            field:"username",
+            operator:"=",
+            value:ri!username
+          ))),
+  local!languageOtherCombined:
+  if(local!datasubsetLanguage.totalCount=0, {},
+      apply(
+      rule!USR_languageOtherCombinedUserRecordTechSkills(_,_), 
+      merge(
+        index(local!datasubsetLanguage.data, "language", null),
+        index(local!datasubsetLanguage.data, "otherLanguage", null)
+      )
+    )), 
+  local!datasubsetPS:
+   a!queryEntity(
+      entity: cons!USR_ABOUT_ME_TECHNICAL_SKILLS_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "skill"),
+          a!queryColumn(field: "skillLevel"),
+          a!queryColumn(field: "experience"),
+          a!queryColumn(field: "skillUsage")}),
+          pagingInfo:local!pagingInfoPS,
+          filter:a!queryFilter(
+            field:"username",
+            operator:"=",
+            value:ri!username
+          ))),
+  local!datasubsetEngineering:
+   a!queryEntity(
+      entity: cons!USR_ABOUT_ME_ENGINEERING_TECHNICAL_SKILLS_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "skill"),
+          a!queryColumn(field: "skillLevel"),
+          a!queryColumn(field: "experience"),
+          a!queryColumn(field: "skillUsage")}),
+          pagingInfo:local!pagingInfoEngineering,
+          filter:a!queryFilter(
+            field:"username",
+            operator:"=",
+            value:ri!username
+          ))),
+local!datasubsetSecurity:
+a!queryEntity(
+      entity: cons!USR_ABOUT_ME_SECURITY_CLEARANCE_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "securityLevel"),
+          a!queryColumn(field: "comments"),
+          a!queryColumn(field: "dateofExpiration")}),
+          pagingInfo:local!pagingInfoSecurity,
+          filter:a!queryFilter(
+            field:"username",
+            operator:"=",
+            value:ri!username
+          ))),
+  a!dashboardLayout(
+    firstColumnContents: {
+      if(local!datasubsetLanguage.totalCount=0,{},
+      a!sectionLayout(
+        label:"Language Skills",
+        firstColumnContents:{
+        a!gridField(
+          label:"",
+          totalCount: local!datasubsetLanguage.totalCount,
+          columns: {
+             a!gridTextColumn(
+              label: "Language",
+              field: "language",
+              data: local!languageOtherCombined
+            ),
+               a!gridTextColumn(
+              label: "Proficiency Level",
+              field: "proficiency",
+              data: index(local!datasubsetLanguage.data, "proficiency", null)
+            )
+            
+          
+        },
+          value:local!pagingInfoLanguage,
+          saveInto:local!pagingInfoLanguage
+        )},
+        secondColumnContents:{
+          
+        },
+        isCollapsible:true
+      )),
+            if(local!datasubsetSecurity.totalCount=0,{},
+      a!sectionLayout(
+        label:"Security Clearance",
+        firstColumnContents:{
+        a!gridField(
+          label:"",
+          totalCount: local!datasubsetSecurity.totalCount,
+          columns: {
+             a!gridTextColumn(
+              label: "Clearance Level",
+              field: "securityLevel",
+              data: index(local!datasubsetSecurity.data, "securityLevel", null)
+            ),
+               a!gridTextColumn(
+              label: "Comments",
+              field: "comments",
+              data: index(local!datasubsetSecurity.data, "comments", null)
+            ),
+              a!gridTextColumn(
+              label: "Date of Expiration",
+              field: "dateofExpiration",
+              data: rule!ABA_globalDateFormat(index(local!datasubsetSecurity.data, "dateofExpiration", null))
+            )
+            
+          
+        },
+          value:local!pagingInfoLanguage,
+          saveInto:local!pagingInfoLanguage
+        )},
+        secondColumnContents:{
+          
+        },
+        isCollapsible:true
+      )),
+      if(local!datasubsetPS.totalCount=0,{},
+      a!sectionLayout(
+        label:"Professional Services Skills",
+        firstColumnContents:{
+        a!gridField(
+          label:"",
+          totalCount: local!datasubsetPS.totalCount,
+          columns: {
+             a!gridTextColumn(
+              label: "Skill",
+              field: "skill",
+              data: index(local!datasubsetPS.data, "skill", null)
+            ),
+               a!gridTextColumn(
+              label: "Skill Level",
+              field: "skillLevel",
+              data: index(local!datasubsetPS.data, "skillLevel", null)
+            ),
+              a!gridTextColumn(
+              label: "Experience",
+              field: "experience",
+              data: index(local!datasubsetPS.data, "experience", null)
+            ),
+             a!gridTextColumn(
+              label: "Skill Usage",
+              field: "skillUsage",
+              data: index(local!datasubsetPS.data, "skillUsage", null)
+            )
+            
+          
+        },
+          value:local!pagingInfoPS,
+          saveInto:local!pagingInfoPS
+        )
+        },
+        isCollapsible:true
+
+      )),
+      if(local!datasubsetEngineering.totalCount=0,{},
+      a!sectionLayout(
+        label:"Engineering Skills",
+        firstColumnContents:{
+        a!gridField(
+          label:"",
+          totalCount: local!datasubsetEngineering.totalCount,
+          columns: {
+             a!gridTextColumn(
+              label: "Skill",
+              field: "skill",
+              data: index(local!datasubsetEngineering.data, "skill", null)
+            ),
+               a!gridTextColumn(
+              label: "Skill Level",
+              field: "skillLevel",
+              data: index(local!datasubsetEngineering.data, "skillLevel", null)
+            ),
+              a!gridTextColumn(
+              label: "Experience",
+              field: "experience",
+              data:index(local!datasubsetEngineering.data, "experience", null)
+            ),
+             a!gridTextColumn(
+              label: "Skill Usage",
+              field: "skillUsage",
+              data: index(local!datasubsetEngineering.data, "skillUsage", null)
+            )
+            
+          
+        },
+          value:local!pagingInfoEngineering,
+          saveInto:local!pagingInfoEngineering
+        )
+        },
+        isCollapsible:true
+
+      ))
+      
+    }
+  )
+  )
+), dep_types=[Ljava.lang.String;@6ad7dfca, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@b049d9, dep_variables=[[Ljava.lang.String;@117fdbd3},partition=2,partitionName=/usr/local/appian/ae/_admin/accdocs2]
+2015-11-18 20:50:19.519 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.519 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: TypedVariable[name=username,it=4,v=]
+2015-11-18 20:50:19.52 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.521 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@3327ca2a[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[noah.singh],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.521 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.521 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.521 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: ContentRole[name=administrators,usernames=[noah.singh],inherit=true,allowForAll=false]
+2015-11-18 20:50:19.523 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.523 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.523 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.525 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Exporting binary resources.
+2015-11-18 20:50:19.525 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Serializing object to XML.
+2015-11-18 20:50:19.536 DEBUG content 221882 _a-0000dbc9-9724-8000-9ba2-011c48011c48_196369 Object transported.
+2015-11-18 20:50:19.536 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Begin transport.
+2015-11-18 20:50:19.536 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Retrieving object data.
+2015-11-18 20:50:19.567 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Setting uuids of object references.
+2015-11-18 20:50:19.567 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: RulesFolder.forum
+2015-11-18 20:50:19.568 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: RulesFolder.parent
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@2612d69c[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Exporting binary resources.
+2015-11-18 20:50:19.57 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Serializing object to XML.
+2015-11-18 20:50:19.575 DEBUG content 221883 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220112 Object transported.
+2015-11-18 20:50:19.575 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Begin transport.
+2015-11-18 20:50:19.575 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Retrieving object data.
+2015-11-18 20:50:19.588 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Setting uuids of object references.
+2015-11-18 20:50:19.588 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: [Content:id=221884,versionId=-1,name=USR_createTextForTooltipsInTechSkillReportForLanguage,description=takes an array of languages and an array of associated proficiency levels and formats them with the appropriate text for a tooltip.,type=32,subtype=1,uuid=_a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221884,logName=USR_createTextForTooltipsInTechSkillReportForLanguage,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:58.0,updatedTimestamp=2015-11-18 20:11:58.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@45fe3fd7, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@12f61783, definition=
+
+index(ri!languages, ri!index, null) & " (" & index(ri!profLevels, ri!index, null) & ")"
+, dep_types=[Ljava.lang.String;@4b712326, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@30e3d37, dep_variables=[[Ljava.lang.String;@37baaa06},partition=1,partitionName=/usr/local/appian/ae/_admin/accdocs1]
+2015-11-18 20:50:19.588 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.589 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: TypedVariable[name=languages,it=103,v=<null>]
+2015-11-18 20:50:19.589 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: TypedVariable[name=profLevels,it=103,v=<null>]
+2015-11-18 20:50:19.589 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: TypedVariable[name=index,it=1,v=<null>]
+2015-11-18 20:50:19.589 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@539ac3e0[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Exporting binary resources.
+2015-11-18 20:50:19.591 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Serializing object to XML.
+2015-11-18 20:50:19.599 DEBUG content 221884 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220050 Object transported.
+2015-11-18 20:50:19.599 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Begin transport.
+2015-11-18 20:50:19.599 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Retrieving object data.
+2015-11-18 20:50:19.612 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Setting uuids of object references.
+2015-11-18 20:50:19.612 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: [Content:id=221885,versionId=-1,name=USR_applyTooltipTextToAllSkillsAndLevelsForLanguage,description=Loops over the tooltip text rule and applies it to all the languages and proficiency levels for a given user.,type=32,subtype=1,uuid=_a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221885,logName=USR_applyTooltipTextToAllSkillsAndLevelsForLanguage,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:58.0,updatedTimestamp=2015-11-18 20:11:58.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@7bc1548f, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@6b81be5e, definition=with(
+  
+    /*local!datasubsetEngineeringForToolTip:*/
+    /*a!queryEntity(*/
+    /*  entity: cons!USR_ABOUT_ME_ENGINEERING_TECHNICAL_SKILLS_DATASTORE_ENTITY,*/
+    /*  query: a!query(*/
+    /*    selection: a!querySelection(columns: {*/
+    /*      a!queryColumn(field: "id"),*/
+    /*      a!queryColumn(field: "username"),*/
+    /*      a!queryColumn(field: "skill"),*/
+    /*      a!queryColumn(field: "skillLevel"),*/
+    /*      a!queryColumn(field: "experience"),*/
+    /*      a!queryColumn(field: "skillUsage")}),*/
+    /*      pagingInfo: topagingInfo(1,-1)*/
+    /*      )),*/
+    local!usernameIndex: wherecontains(ri!username, touniformstring(index(ri!datasubsetForToolTip.data, "username", null))),
+    local!findUsersSkills: index(ri!datasubsetForToolTip.data, local!usernameIndex, null),
+    local!langIndexByUserName: index(local!findUsersSkills, "language", null),
+    local!profLevelIndexByUserName: index(local!findUsersSkills, "proficiency", null),
+    
+          {
+"Language: " &
+   apply(rule!USR_createTextForTooltipsInTechSkillReportForLanguage(
+      languages: local!langIndexByUserName,
+      profLevels: local!profLevelIndexByUserName,
+      index:_), enumerate(length(local!usernameIndex))+1)
+
+          }
+    
+    
+), dep_types=[Ljava.lang.String;@36e691b, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@3d7652cf, dep_variables=[[Ljava.lang.String;@4ce20cc2},partition=2,partitionName=/usr/local/appian/ae/_admin/accdocs2]
+2015-11-18 20:50:19.614 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.615 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: TypedVariable[name=username,it=3,v=]
+2015-11-18 20:50:19.615 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: TypedVariable[name=datasubsetForToolTip,it=1678,v=<null>]
+2015-11-18 20:50:19.615 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@5422d0a1[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Exporting binary resources.
+2015-11-18 20:50:19.617 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Serializing object to XML.
+2015-11-18 20:50:19.626 DEBUG content 221885 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_220051 Object transported.
+2015-11-18 20:50:19.626 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Begin transport.
+2015-11-18 20:50:19.626 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Retrieving object data.
+2015-11-18 20:50:19.641 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Setting uuids of object references.
+2015-11-18 20:50:19.641 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: [Content:id=221886,versionId=-1,name=USR_createTextForTooltipsInTechSkillReportForSecClearance,description=takes an array of clearances and an array of associated dates of expiration and formats them with the appropriate text for a tooltip.,type=32,subtype=1,uuid=_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221886,logName=USR_createTextForTooltipsInTechSkillReportForSecClearance,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:58.0,updatedTimestamp=2015-11-18 20:11:58.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@42ff5bb1, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@5c19b65b, definition=
+if(isnull(ri!clearance), null, 
+index(ri!clearance, ri!index, null) & " (Expires: " & index(ri!dateOfExpiration, ri!index, null) & ")"
+), dep_types=[Ljava.lang.String;@1f9f85ad, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@468cfdc7, dep_variables=[[Ljava.lang.String;@7e960474},partition=3,partitionName=/usr/local/appian/ae/_admin/accdocs3]
+2015-11-18 20:50:19.641 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.642 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: TypedVariable[name=clearance,it=103,v=<null>]
+2015-11-18 20:50:19.642 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: TypedVariable[name=dateOfExpiration,it=103,v=<null>]
+2015-11-18 20:50:19.642 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: TypedVariable[name=index,it=1,v=<null>]
+2015-11-18 20:50:19.642 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@3aba1f3a[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Exporting binary resources.
+2015-11-18 20:50:19.644 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Serializing object to XML.
+2015-11-18 20:50:19.654 DEBUG content 221886 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219873 Object transported.
+2015-11-18 20:50:19.654 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Begin transport.
+2015-11-18 20:50:19.654 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Retrieving object data.
+2015-11-18 20:50:19.668 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Setting uuids of object references.
+2015-11-18 20:50:19.669 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: [Content:id=221887,versionId=-1,name=USR_applyTooltipTextToSecClearance,description=Loops over the security clearance tooltip text rule and applies it to all the security clearances for a given user.,type=32,subtype=1,uuid=_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221887,logName=USR_applyTooltipTextToSecClearance,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:58.0,updatedTimestamp=2015-11-18 20:11:58.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@289ea395, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@7b57989b, definition=with(
+  
+/*local!datasubsetSecurity:*/
+/*a!queryEntity(*/
+/*      entity: cons!USR_ABOUT_ME_SECURITY_CLEARANCE_DATASTORE_ENTITY,*/
+/*      query: a!query(*/
+/*        selection: a!querySelection(columns: {*/
+/*          a!queryColumn(field: "id"),*/
+/*          a!queryColumn(field: "username"),*/
+/*          a!queryColumn(field: "securityLevel"),*/
+/*          a!queryColumn(field: "comments"),*/
+/*          a!queryColumn(field: "dateofExpiration")}),*/
+/*          pagingInfo:topaginginfo(1,-1)*/
+          
+/*          )),*/
+    local!usernameIndex: wherecontains(ri!username, touniformstring(index(ri!datasubsetForToolTip.data, "username", null))),
+    local!findUsersClearance: index(ri!datasubsetForToolTip.data, local!usernameIndex, null),
+    local!clearanceIndexByUserName: index(local!findUsersClearance, "securityLevel", null),
+    local!dateOfExpirationIndexByUserName: index(local!findUsersClearance, "dateofExpiration", null),
+    
+          {
+          
+ "Security Clearance: " &            
+if(rule!ABA_isBlankOrZero(local!usernameIndex), "None", 
+   apply(rule!USR_createTextForTooltipsInTechSkillReportForSecClearance(
+      clearance: local!clearanceIndexByUserName,
+      dateOfExpiration: local!dateOfExpirationIndexByUserName,
+      index:_), enumerate(length(local!usernameIndex))+1)
+)
+          }
+    
+    
+), dep_types=[Ljava.lang.String;@58621cc7, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@55b763f1, dep_variables=[[Ljava.lang.String;@868e0d9},partition=1,partitionName=/usr/local/appian/ae/_admin/accdocs1]
+2015-11-18 20:50:19.671 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.671 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: TypedVariable[name=username,it=3,v=]
+2015-11-18 20:50:19.671 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: TypedVariable[name=datasubsetForToolTip,it=1678,v=<null>]
+2015-11-18 20:50:19.671 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@3f3e6d16[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Exporting binary resources.
+2015-11-18 20:50:19.673 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Serializing object to XML.
+2015-11-18 20:50:19.682 DEBUG content 221887 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219868 Object transported.
+2015-11-18 20:50:19.682 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Begin transport.
+2015-11-18 20:50:19.682 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Retrieving object data.
+2015-11-18 20:50:19.696 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Setting uuids of object references.
+2015-11-18 20:50:19.696 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: [Content:id=221888,versionId=-1,name=USR_createTextForTooltipsInTechSkillReport,description=takes an array of Skills and an array of associated Skill levels and formats them with the appropriate text for a tooltip.,type=32,subtype=1,uuid=5b760344-ad33-416b-8a15-02c041ea5b50,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221888,logName=USR_createTextForTooltipsInTechSkillReport,state=255,visibility=35,security=143,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:58.0,updatedTimestamp=2015-11-18 20:11:58.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@44ed51c8, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@710d46ca, definition=
+
+index(ri!skills, ri!index, null) & " (" & index(ri!skillLevels, ri!index, null) & ")"
+, dep_types=[Ljava.lang.String;@36be132b, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@6121ca7d, dep_variables=[[Ljava.lang.String;@4f6cb480},partition=2,partitionName=/usr/local/appian/ae/_admin/accdocs2]
+2015-11-18 20:50:19.697 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.697 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: TypedVariable[name=skills,it=103,v=<null>]
+2015-11-18 20:50:19.697 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: TypedVariable[name=skillLevels,it=103,v=<null>]
+2015-11-18 20:50:19.697 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: TypedVariable[name=index,it=1,v=<null>]
+2015-11-18 20:50:19.697 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.699 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@ca68ed3[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[elizabeth.gottesman],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.699 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.699 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.699 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: ContentRole[name=administrators,usernames=[elizabeth.gottesman],inherit=true,allowForAll=false]
+2015-11-18 20:50:19.7 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.7 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.7 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.7 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Exporting binary resources.
+2015-11-18 20:50:19.7 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Serializing object to XML.
+2015-11-18 20:50:19.709 DEBUG content 221888 5b760344-ad33-416b-8a15-02c041ea5b50 Object transported.
+2015-11-18 20:50:19.709 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Begin transport.
+2015-11-18 20:50:19.709 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Retrieving object data.
+2015-11-18 20:50:19.723 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Setting uuids of object references.
+2015-11-18 20:50:19.723 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: [Content:id=221889,versionId=-1,name=USR_applyTooltipTextToAllSkillsAndLevels,description=Loops over the tooltip text rule and applies it to all the skills and skill levels for a given user.,type=32,subtype=1,uuid=122e14c8-327c-4a62-860b-31ba363563a9,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221889,logName=USR_applyTooltipTextToAllSkillsAndLevels,state=255,visibility=35,security=143,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:58.0,updatedTimestamp=2015-11-18 20:11:58.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@28a58399, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@7857f9ef, definition=with(
+  
+    /*local!datasubsetEngineeringForToolTip:*/
+    /*a!queryEntity(*/
+    /*  entity: cons!USR_ABOUT_ME_ENGINEERING_TECHNICAL_SKILLS_DATASTORE_ENTITY,*/
+    /*  query: a!query(*/
+    /*    selection: a!querySelection(columns: {*/
+    /*      a!queryColumn(field: "id"),*/
+    /*      a!queryColumn(field: "username"),*/
+    /*      a!queryColumn(field: "skill"),*/
+    /*      a!queryColumn(field: "skillLevel"),*/
+    /*      a!queryColumn(field: "experience"),*/
+    /*      a!queryColumn(field: "skillUsage")}),*/
+    /*      pagingInfo: topagingInfo(1,-1)*/
+    /*      )),*/
+    local!usernameIndex: wherecontains(ri!username, touniformstring(index(ri!datasubsetForToolTip.data, "username", null))),
+    local!findUsersSkills: index(ri!datasubsetForToolTip.data, local!usernameIndex, null),
+    local!skillIndexByUserName: index(local!findUsersSkills, "skill", null),
+    local!skillLevelIndexByUserName: index(local!findUsersSkills, "skillLevel", null),
+    
+          {
+
+   apply(rule!USR_createTextForTooltipsInTechSkillReport(
+      skills: local!skillIndexByUserName,
+      skillLevels: local!skillLevelIndexByUserName,
+      index:_), enumerate(length(local!usernameIndex))+1)
+
+          }
+    
+    
+), dep_types=[Ljava.lang.String;@50b3eb91, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@721033e1, dep_variables=[[Ljava.lang.String;@762ddf71},partition=3,partitionName=/usr/local/appian/ae/_admin/accdocs3]
+2015-11-18 20:50:19.725 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.725 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: TypedVariable[name=username,it=3,v=]
+2015-11-18 20:50:19.726 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: TypedVariable[name=datasubsetForToolTip,it=1678,v=<null>]
+2015-11-18 20:50:19.726 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.727 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@f7b9a46[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[elizabeth.gottesman],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.727 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.727 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.727 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: ContentRole[name=administrators,usernames=[elizabeth.gottesman],inherit=true,allowForAll=false]
+2015-11-18 20:50:19.729 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.729 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.729 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.729 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Exporting binary resources.
+2015-11-18 20:50:19.729 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Serializing object to XML.
+2015-11-18 20:50:19.737 DEBUG content 221889 122e14c8-327c-4a62-860b-31ba363563a9 Object transported.
+2015-11-18 20:50:19.737 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Begin transport.
+2015-11-18 20:50:19.737 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Retrieving object data.
+2015-11-18 20:50:19.754 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Setting uuids of object references.
+2015-11-18 20:50:19.754 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: [Content:id=221890,versionId=-1,name=USR_applyTooltipTextToAllSkillsAndLevelsForEng,description=Loops over the tooltip text rule and applies it to all the skills and skill levels for a given user. Comes at the end of list and does not add any text.,type=32,subtype=1,uuid=_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221890,logName=USR_applyTooltipTextToAllSkillsAndLevelsForEng,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:59.0,updatedTimestamp=2015-11-18 20:11:59.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@6aa195b0, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@1b084db8, definition=with(
+  
+    /*local!datasubsetEngineeringForToolTip:*/
+    /*a!queryEntity(*/
+    /*  entity: cons!USR_ABOUT_ME_ENGINEERING_TECHNICAL_SKILLS_DATASTORE_ENTITY,*/
+    /*  query: a!query(*/
+    /*    selection: a!querySelection(columns: {*/
+    /*      a!queryColumn(field: "id"),*/
+    /*      a!queryColumn(field: "username"),*/
+    /*      a!queryColumn(field: "skill"),*/
+    /*      a!queryColumn(field: "skillLevel"),*/
+    /*      a!queryColumn(field: "experience"),*/
+    /*      a!queryColumn(field: "skillUsage")}),*/
+    /*      pagingInfo: topagingInfo(1,-1)*/
+    /*      )),*/
+    local!usernameIndex: wherecontains(ri!username, touniformstring(index(ri!datasubsetForToolTip.data, "username", null))),
+    local!findUsersSkills: index(ri!datasubsetForToolTip.data, local!usernameIndex, null),
+    local!skillIndexByUserName: index(local!findUsersSkills, "skill", null),
+    local!skillLevelIndexByUserName: index(local!findUsersSkills, "skillLevel", null),
+    
+          {
+
+   apply(rule!USR_createTextForTooltipsInTechSkillReport(
+      skills: local!skillIndexByUserName,
+      skillLevels: local!skillLevelIndexByUserName,
+      index:_), enumerate(length(local!usernameIndex))+1)
+
+          }
+    
+    
+), dep_types=[Ljava.lang.String;@774c7dcd, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@6269021, dep_variables=[[Ljava.lang.String;@604c9940},partition=1,partitionName=/usr/local/appian/ae/_admin/accdocs1]
+2015-11-18 20:50:19.756 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.756 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: TypedVariable[name=username,it=3,v=]
+2015-11-18 20:50:19.757 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: TypedVariable[name=datasubsetForToolTip,it=1678,v=<null>]
+2015-11-18 20:50:19.757 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.758 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@4f3563ed[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.758 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.758 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.758 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.758 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.758 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.758 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.759 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Exporting binary resources.
+2015-11-18 20:50:19.759 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Serializing object to XML.
+2015-11-18 20:50:19.767 DEBUG content 221890 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219855 Object transported.
+2015-11-18 20:50:19.767 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Begin transport.
+2015-11-18 20:50:19.767 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Retrieving object data.
+2015-11-18 20:50:19.78 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Setting uuids of object references.
+2015-11-18 20:50:19.781 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: [Content:id=221891,versionId=-1,name=USR_applyTooltipTextToAllSkillsAndLevelsForPS,description=Loops over the tooltip text rule and applies it to all the skills and skill levels for a given user. Appends text: "Skills: " in front of list.,type=32,subtype=1,uuid=_a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221891,logName=USR_applyTooltipTextToAllSkillsAndLevelsForPS,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:59.0,updatedTimestamp=2015-11-18 20:11:59.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@5acf7016, system=0, preferredEditor=legacy, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@bb0bfc1, definition=with(
+  
+    /*local!datasubsetEngineeringForToolTip:*/
+    /*a!queryEntity(*/
+    /*  entity: cons!USR_ABOUT_ME_ENGINEERING_TECHNICAL_SKILLS_DATASTORE_ENTITY,*/
+    /*  query: a!query(*/
+    /*    selection: a!querySelection(columns: {*/
+    /*      a!queryColumn(field: "id"),*/
+    /*      a!queryColumn(field: "username"),*/
+    /*      a!queryColumn(field: "skill"),*/
+    /*      a!queryColumn(field: "skillLevel"),*/
+    /*      a!queryColumn(field: "experience"),*/
+    /*      a!queryColumn(field: "skillUsage")}),*/
+    /*      pagingInfo: topagingInfo(1,-1)*/
+    /*      )),*/
+    local!usernameIndex: wherecontains(ri!username, touniformstring(index(ri!datasubsetForToolTip.data, "username", null))),
+    local!findUsersSkills: index(ri!datasubsetForToolTip.data, local!usernameIndex, null),
+    local!skillIndexByUserName: index(local!findUsersSkills, "skill", null),
+    local!skillLevelIndexByUserName: index(local!findUsersSkills, "skillLevel", null),
+    
+          {
+
+   "Skills: " & apply(rule!USR_createTextForTooltipsInTechSkillReport(
+      skills: local!skillIndexByUserName,
+      skillLevels: local!skillLevelIndexByUserName,
+      index:_), enumerate(length(local!usernameIndex))+1)
+
+          }
+    
+    
+), dep_types=[Ljava.lang.String;@64fe8a4b, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@3b9a73ec, dep_variables=[[Ljava.lang.String;@1a74eb49},partition=2,partitionName=/usr/local/appian/ae/_admin/accdocs2]
+2015-11-18 20:50:19.782 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.783 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: TypedVariable[name=username,it=3,v=]
+2015-11-18 20:50:19.783 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: TypedVariable[name=datasubsetForToolTip,it=1678,v=<null>]
+2015-11-18 20:50:19.783 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@6add966b[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Exporting binary resources.
+2015-11-18 20:50:19.785 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Serializing object to XML.
+2015-11-18 20:50:19.793 DEBUG content 221891 _a-0000dc08-3c7c-8000-9ba2-011c48011c48_219853 Object transported.
+2015-11-18 20:50:19.793 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Begin transport.
+2015-11-18 20:50:19.793 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Retrieving object data.
+2015-11-18 20:50:19.809 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Setting uuids of object references.
+2015-11-18 20:50:19.81 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: [Content:id=221892,versionId=-1,name=USR_technicalSkillsReport,description=This report allows a user to search for employees with specific skills.,type=32,subtype=1,uuid=_a-0000dbff-8321-8000-9ba2-011c48011c48_216465,parent=221883,parentName=USR Employee Skills Report Rules,parentType=2,log=221892,logName=USR_technicalSkillsReport,state=255,visibility=35,security=15,creator=elizabeth.gottesman,createdTimestamp=2015-11-18 20:11:59.0,updatedTimestamp=2015-11-18 20:11:59.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@6bb29927, system=0, preferredEditor=interface, implicitRuleInputBindingsExpr=null, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@4e8197ef, definition==load(
+  local!searchedUser,
+  local!securityClearance,
+  local!securityClearanceExpDate,
+  local!language, 
+  local!proficiency, 
+  local!psSkill, 
+  local!psSkillLevel, 
+  local!engSkill,   
+  local!engSkillLevel,
+  local!pagingInfoForGridsOnUserSearch:a!pagingInfo(startIndex: 1,batchSize: 25,sort: a!sortInfo(field: "username", ascending: true)),
+  local!pagingInfoForEngGrid:a!pagingInfo(startIndex: 1,batchSize: 25,sort: a!sortInfo(field: "username", ascending: true)), 
+  local!pagingInfoForPSGrid:a!pagingInfo(startIndex: 1,batchSize: 25,sort: a!sortInfo(field: "username",ascending: true)),
+  local!pagingInfoForLanguageGrid:a!pagingInfo(startIndex: 1,batchSize: 25,sort: a!sortInfo(field: "username", ascending: true)),
+  local!pagingInfoForClearanceGrid:a!pagingInfo(startIndex: 1,batchSize: 25,sort: a!sortInfo(field: "username",ascending: true)),
+  
+  
+  
+with(
+  local!datasubsetLanguage:
+      a!queryEntity(
+      entity: cons!USR_ABOUT_ME_LANGUAGES_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "language"),
+          a!queryColumn(field: "otherLanguage"),
+          a!queryColumn(field: "proficiency"),
+          a!queryColumn(field: "gridPlaceholder")}),
+          pagingInfo: local!pagingInfoForLanguageGrid,
+          logicalExpression: a!queryLogicalExpression(
+            operator: "AND",
+            filters: {
+              if(rule!APN_isBlank(local!language), a!queryFilter(field:"language", operator:"not null"), 
+          a!queryFilter(field:"language", operator:"=", value: local!language)
+          ),
+            if(rule!APN_isBlank(local!proficiency), a!queryFilter(field:"proficiency", operator:"not null"), 
+          a!queryFilter(field:"proficiency", operator:"=", value: local!proficiency)
+          )
+            /*if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:"username", operator:"not null"), */
+          /*a!queryFilter(field:"username", operator:"=", value: tostring(local!searchedUser))*/
+          /*)*/
+            })
+          )),
+  local!languageOtherCombined:
+    if(local!datasubsetLanguage.totalCount=0, {},
+      apply(
+      rule!USR_languageOtherCombinedUserRecordTechSkills(_,_), 
+      merge(
+        index(local!datasubsetLanguage.data, "language", null),
+        index(local!datasubsetLanguage.data, "otherLanguage", null)
+      )
+    )), 
+  local!datasubsetPS:
+    a!queryEntity(
+      entity: cons!USR_ABOUT_ME_TECHNICAL_SKILLS_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "skill"),
+          a!queryColumn(field: "skillLevel"),
+          a!queryColumn(field: "experience"),
+          a!queryColumn(field: "skillUsage")}),
+          pagingInfo:local!pagingInfoForPSGrid,
+          logicalExpression: a!queryLogicalExpression(
+            operator: "AND",
+            filters: {
+              if(rule!APN_isBlank(local!psSkill), a!queryFilter(field:"skill", operator:"not null"), 
+          a!queryFilter(field:"skill", operator:"=", value: local!psSkill)),
+            if(rule!APN_isBlank(local!psSkillLevel), a!queryFilter(field:"skillLevel", operator:"not null"), 
+          a!queryFilter(field:"skillLevel", operator:"=", value: local!psSkillLevel))
+          /*  if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:"username", operator:"not null"), */
+          /*a!queryFilter(field:"username", operator:"=", value: tostring(local!searchedUser)))*/
+          })
+          )),
+  local!datasubsetEngineering:
+     a!queryEntity(
+      entity: cons!USR_ABOUT_ME_ENGINEERING_TECHNICAL_SKILLS_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "skill"),
+          a!queryColumn(field: "skillLevel"),
+          a!queryColumn(field: "experience"),
+          a!queryColumn(field: "skillUsage")}),
+          pagingInfo:local!pagingInfoForEngGrid,
+          logicalExpression: a!queryLogicalExpression(
+            operator: "AND",
+            filters: {
+              if(rule!APN_isBlank(local!engSkill), a!queryFilter(field:"skill", operator:"not null"), 
+          a!queryFilter(field:"skill", operator:"=", value: local!engSkill)),
+          /*  if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:"username", operator:"not null"), */
+          /*a!queryFilter(field:"username", operator:"=", value: tostring(local!searchedUser))*/
+          /*),*/
+            if(rule!APN_isBlank(local!engSkillLevel), a!queryFilter(field:"skillLevel", operator:"not null"), 
+          a!queryFilter(field:"skillLevel", operator:"=", value: local!engSkillLevel))
+            })
+          )),
+  local!datasubsetSecurity:
+     a!queryEntity(
+      entity: cons!USR_ABOUT_ME_SECURITY_CLEARANCE_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "securityLevel"),
+          a!queryColumn(field: "comments"),
+          a!queryColumn(field: "dateofExpiration")}),
+          pagingInfo:local!pagingInfoForClearanceGrid,
+          logicalExpression: a!queryLogicalExpression(
+            operator: "AND",
+            filters: {
+              if(rule!APN_isBlank(local!securityClearance), a!queryFilter(field:"securityLevel", operator:"not null"), 
+          a!queryFilter(field:"securityLevel", operator:"=", value: local!securityClearance))
+          /*  if(rule!APN_isBlank(local!searchedUser), a!queryFilter(field:"username", operator:"not null"), */
+          /*a!queryFilter(field:"username", operator:"=", value: tostring(local!searchedUser))*/
+          /*)*/
+            })
+          )),
+  local!datasubsetSecurityForToolTip:
+     a!queryEntity(
+      entity: cons!USR_ABOUT_ME_SECURITY_CLEARANCE_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "securityLevel"),
+          a!queryColumn(field: "comments"),
+          a!queryColumn(field: "dateofExpiration")}),
+          pagingInfo: topaginginfo(1,-1)
+          )),
+  local!datasubsetEngineeringForToolTip:
+    a!queryEntity(
+      entity: cons!USR_ABOUT_ME_ENGINEERING_TECHNICAL_SKILLS_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "skill"),
+          a!queryColumn(field: "skillLevel"),
+          a!queryColumn(field: "experience"),
+          a!queryColumn(field: "skillUsage")}),
+          pagingInfo: topagingInfo(1,-1)
+          )),
+  local!datasubsetPSForToolTip:
+    a!queryEntity(
+      entity: cons!USR_ABOUT_ME_TECHNICAL_SKILLS_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "skill"),
+          a!queryColumn(field: "skillLevel"),
+          a!queryColumn(field: "experience"),
+          a!queryColumn(field: "skillUsage")}),
+          pagingInfo: topagingInfo(1,-1)
+          )), 
+  local!datasubsetLanguageForToolTip:
+    a!queryEntity(
+      entity: cons!USR_ABOUT_ME_LANGUAGES_DATASTORE_ENTITY,
+      query: a!query(
+        selection: a!querySelection(columns: {
+          a!queryColumn(field: "id"),
+          a!queryColumn(field: "username"),
+          a!queryColumn(field: "language"),
+          a!queryColumn(field: "otherLanguage"),
+          a!queryColumn(field: "proficiency"),
+          a!queryColumn(field: "gridPlaceholder")}),
+          pagingInfo: topaginginfo(1,-1)
+          )),
+          
+          /*END OF LOCAL VARIABLES*/
+          
+    a!dashboardLayout(
+      firstColumnContents:
+         {
+          /*a!sectionLayout(*/
+          /*  firstColumnContents:*/
+          /*  {*/
+          /*    a!pickerFieldUsers(*/
+          /*      label: "Employee",*/
+          /*      labelPosition: "ABOVE",*/
+          /*      placeholder: "Search for an employee here.",*/
+          /*      maxSelections: 1,*/
+          /*      value: local!searchedUser,*/
+          /*      saveInto: local!searchedUser*/
+
+          /*    )*/
+          /*  }*/
+          /* ),*/
+          
+           /*END OF PERSON SEARCH SECTION*/
+           
+          a!sectionLayout(
+            label:"Languages",
+            firstColumnContents:
+            
+            {        
+              a!dropdownField(
+                label:"",
+                labelPosition:"COLLAPSED",
+                placeholderLabel:"All Languages",
+                
+                choiceLabels:cons!USR_LIST_OF_LANGUAGES, 
+                choiceValues:cons!USR_LIST_OF_LANGUAGES, 
+                value:local!language,
+                saveInto:{
+                  local!language,
+                  a!save(local!pagingInfoForLanguageGrid.startIndex,1)
+                }
+            ),
+              a!dropdownField(
+                label:"",
+                labelPosition:"COLLAPSED",
+                placeholderLabel:"All Proficiency Levels", 
+                choiceLabels: {"Business", "Conversational", "Native"}, 
+                choiceValues: {"Business", "Conversational", "Native"}, 
+                value:local!proficiency,
+                saveInto:{
+                  local!proficiency,
+                  a!save(local!pagingInfoForLanguageGrid.startIndex,1)
+                }
+              ),
+        /* Show a message if no data in DB, else show grid */      
+        if(local!datasubsetLanguage.totalCount=0,
+        a!gridField(label: "", totalCount: local!datasubsetLanguage.totalCount, emptyGridMessage: "No employees found",
+          columns: { a!gridTextColumn(label: "Employee Name",field: "username", data: {}),
+                     a!gridTextColumn(label: "Language",field: "language", data: {}),
+                     a!gridTextColumn(label: "Proficiency Level",field: "proficiency", data: {}),
+                    a!gridTextColumn(label: "All Listed Languages",field: "language", data: {})
+          },
+          value:local!pagingInfoForLanguageGrid,
+          saveInto:local!pagingInfoForLanguageGrid
+          ),
+        a!gridField(
+          label:"",
+          totalCount: local!datasubsetLanguage.totalCount,
+          emptyGridMessage: "No employees found",
+          columns: {
+            
+            a!gridTextColumn(
+              label: "Employee Name",
+              field: "username",
+              data: if(rule!APN_isEmpty(index(local!datasubsetLanguage.data, "username", null)),{},
+                    apply(rule!APN_displayUser(_), index(local!datasubsetLanguage.data, "username", null))),
+              links: {
+                      if(rule!APN_isEmpty(index(local!datasubsetLanguage.data, "username", null)), {}, 
+                      apply(a!userRecordLink(
+                      label:"",
+                      user: _,
+                      view: "summary"
+                      ), index(local!datasubsetLanguage.data, "username", null)))}
+            ),
+             a!gridTextColumn(
+              label: "Language",
+              field: "language",
+              data: local!languageOtherCombined
+            ),
+               a!gridTextColumn(
+              label: "Proficiency Level",
+              field: "proficiency",
+              data: index(local!datasubsetLanguage.data, "proficiency", null)
+            ),
+                  a!gridImageColumn(
+          label: "All Listed Languages",
+          field: "language",
+          size: "ICON",
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(a!documentImage(document:_, caption:_, link: _),
+			  merge(
+				apply(rule!ABA_returnDisplayOrNullIcon,index(local!datasubsetLanguage.data, "language", null) ,cons!ABA_INFO_ICON,a!iconIndicator("REMOVE_DISABLED")),
+				
+				a!applyComponents(rule!USR_applyTooltipTextToAllSkillsAndLevelsForLanguage(username: _, datasubsetForToolTip: local!datasubsetLanguageForToolTip), 
+				                index(local!datasubsetLanguage.data, "username", null)), 
+				  
+				apply(a!userRecordLink(label:"",user: _,view: "_3YQ6Sg"), index(local!datasubsetLanguage.data, "username", null))
+				))
+				          ) 
+            
+          
+        },
+          value:local!pagingInfoForLanguageGrid,
+          saveInto:local!pagingInfoForLanguageGrid
+        ))
+            },
+            isCollapsible: true
+          ),
+          /* END OF LANGUAGE SECTION */
+          
+          a!sectionLayout(
+            label:"Security Clearance",
+            firstColumnContents:
+            
+            {
+              a!dropdownField(
+                label:"",
+                labelPosition:"COLLAPSED",
+                placeholderLabel:"All Clearance Levels",
+                
+                choiceLabels:cons!USR_SECURITY_CLEARANCE_LEVELS_LIST, 
+                choiceValues:cons!USR_SECURITY_CLEARANCE_LEVELS_LIST, 
+                value:local!securityClearance,
+                saveInto:{
+                  local!securityClearance,
+                  a!save(local!pagingInfoForClearanceGrid.startIndex,1)
+                }
+            ),
+     
+              if(local!datasubsetSecurity.totalCount=0,
+              a!gridField(label: "", totalCount: local!datasubsetSecurity.totalCount, emptyGridMessage: "No employees found",
+          columns: { a!gridTextColumn(label: "Employee Name",field: "username", data: {}),
+                     a!gridTextColumn(label: "Clearance Level",field: "securityLevel", data: {}),
+                     a!gridTextColumn(label: "Comments",field: "comments", data: {}),
+                     a!gridTextColumn(label: "Date of Expiration",field: "dateofExpiration", data: {}),
+                    a!gridTextColumn(label: "All Listed Clearances",field: "securityLevel",data: {})
+          },
+          value:local!pagingInfoForClearanceGrid,
+          saveInto:local!pagingInfoForClearanceGrid
+          ),
+              a!gridField(
+          label:"",
+          totalCount: if(local!datasubsetSecurity.totalCount=0, 1, local!datasubsetSecurity.totalCount),
+          columns: {
+              a!gridTextColumn(
+              label: "Employee Name",
+              field: "username",
+              data:  if(rule!APN_isEmpty(index(local!datasubsetSecurity.data, "username", null)),{},
+              apply(rule!APN_displayUser(_), index(local!datasubsetSecurity.data, "username", null))),
+              links: {
+                
+                if(rule!APN_isEmpty(index(local!datasubsetSecurity.data, "username", null)), {}, 
+                apply(a!userRecordLink(
+                      label:"",
+                      user: _,
+                      view: "summary"
+                      ), index(local!datasubsetSecurity.data, "username", null)))}
+            ),            
+              a!gridTextColumn(
+              label: "Clearance Level",
+              field: "securityLevel",
+              data: index(local!datasubsetSecurity.data, "securityLevel", null)
+            ),
+              a!gridTextColumn(
+              label: "Comments",
+              field: "comments",
+              data: index(local!datasubsetSecurity.data, "comments", null)
+            ),
+              a!gridTextColumn(
+              label: "Date of Expiration",
+              field: "dateofExpiration",
+              data: rule!ABA_globalDateFormat(index(local!datasubsetSecurity.data, "dateofExpiration", null))
+            ),
+              a!gridImageColumn(
+          label: "All Clearances",
+          field: "securityLevel",
+          size: "ICON",
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(a!documentImage(document:_, caption:_, link: _),
+			  merge(
+				apply(rule!ABA_returnDisplayOrNullIcon,index(local!datasubsetSecurity.data, "securityLevel", null) ,cons!ABA_INFO_ICON,a!iconIndicator("REMOVE_DISABLED")),
+				
+				a!applyComponents(rule!USR_applyTooltipTextToSecClearance(username: _, datasubsetForToolTip: local!datasubsetSecurityForToolTip), 
+				                index(local!datasubsetSecurity.data, "username", null)), 
+				  
+				apply(a!userRecordLink(label:"",user: _,view: "_3YQ6Sg"), index(local!datasubsetSecurity.data, "username", null))
+				))
+				                  ) 
+            
+          
+        },
+          value:local!pagingInfoForClearanceGrid,
+          saveInto:local!pagingInfoForClearanceGrid
+        ))
+            },
+            isCollapsible: true
+          ),
+          /* END OF CLEARANCE SECTION*/
+          
+          a!sectionLayout(
+            label:"Professional Services Skills",
+            isCollapsible: true,
+            firstColumnContents:
+            
+            {a!dropdownField(
+                label:"",
+                labelPosition:"COLLAPSED",
+                placeholderLabel:"All Skills",
+                choiceLabels: cons!USR_SKILLS_LIST, 
+                choiceValues:cons!USR_SKILLS_LIST, 
+                value:local!psSkill, 
+                saveInto:{
+                  local!psSkill, 
+                  a!save(local!pagingInfoForPSGrid.startIndex,1)
+                }
+            ),
+              a!dropdownField(
+                label:"",
+                labelPosition:"COLLAPSED",
+                placeholderLabel:"All Skill Levels", 
+                choiceLabels:cons!USR_TECHNICAL_SKILL_LEVELS, 
+                choiceValues:cons!USR_TECHNICAL_SKILL_LEVELS, 
+                value:local!psSkillLevel, 
+                saveInto:{
+                  local!psSkillLevel, 
+                  a!save(local!pagingInfoForPSGrid.startIndex,1)
+                }
+              ),
+              if(local!datasubsetPS.totalCount=0,
+              a!gridField(label: "", totalCount: local!datasubsetPS.totalCount, emptyGridMessage: "No employees found",
+          columns: { a!gridTextColumn(label: "Employee Name",field: "username", data: {}),
+                     a!gridTextColumn(label: "Skill",field: "skill", data: {}),
+                     a!gridTextColumn(label: "Skill Level",field: "skillLevel", data: {}),
+                     a!gridTextColumn(label: "Experience",field: "experience", data: {}),
+                     a!gridTextColumn(label: "Skill Usage",field: "skillUsage", data: {}),
+                    a!gridTextColumn(label: "All Listed Skills",field: "skill",data: {})
+          },
+          value:local!pagingInfoForPSGrid,
+          saveInto:local!pagingInfoForPSGrid
+          ),
+              a!gridField(
+                label:"",
+                totalCount: local!datasubsetPS.totalCount,
+                emptyGridMessage: "No employees found",
+                columns: {
+                  a!gridTextColumn(
+                    label: "Employee Name",
+                    field: "username",
+                    data: if(rule!APN_isEmpty(index(local!datasubsetPS.data, "username", null)),{},
+              apply(rule!APN_displayUser(_), index(local!datasubsetPS.data, "username", null))),
+                    links: {
+                      if(rule!APN_isEmpty(index(local!datasubsetPS.data, "username", null)), {},
+                      apply(a!userRecordLink(
+                      label:"",
+                      user: _,
+                      view: "summary"
+                      ), index(local!datasubsetPS.data, "username", null)))}
+                  ),
+                   a!gridTextColumn(
+                    label: "Skill",
+                    field: "skill",
+                    data: index(local!datasubsetPS.data, "skill", null)
+                  ),
+                     a!gridTextColumn(
+                    label: "Skill Level",
+                    field: "skillLevel",
+                    data: index(local!datasubsetPS.data, "skillLevel", null)
+                  ),
+                    a!gridTextColumn(
+                    label: "Experience",
+                    field: "experience",
+                    data: index(local!datasubsetPS.data, "experience", null)
+                  ),
+                   a!gridTextColumn(
+                    label: "Skill Usage",
+                    field: "skillUsage",
+                    data:  index(local!datasubsetPS.data, "skillUsage", null)
+                  ),
+
+        a!gridImageColumn(
+          label: "All Listed Skills",
+          field: "skill",
+          size: "ICON",
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(a!documentImage(document:_, caption:_, link: _),
+			  merge(
+				apply(rule!ABA_returnDisplayOrNullIcon,index(local!datasubsetPS.data, "skill", null) ,cons!ABA_INFO_ICON,a!iconIndicator("REMOVE_DISABLED")),
+				
+				a!applyComponents(rule!USR_applyTooltipTextToAllSkillsAndLevelsForEng(username: _, datasubsetForToolTip: local!datasubsetPSForToolTip), 
+				                index(local!datasubsetPS.data, "username", null)), 
+				  
+				apply(a!userRecordLink(label:"",user: _,view: "_3YQ6Sg"), index(local!datasubsetPS.data, "username", null))
+				))
+				                  ) 
+                 },
+                value:local!pagingInfoForPSGrid,
+                saveInto:local!pagingInfoForPSGrid
+              ))
+            }
+          ),
+          
+          /*END OF PS SKILLS SECTION*/
+          
+          a!sectionLayout(
+            label:"Engineering Skills",
+            isCollapsible: true,
+            firstColumnContents:
+            {
+              a!dropdownField(
+                label:"",
+                labelPosition:"COLLAPSED",
+                placeholderLabel:"All Skills",
+                
+                choiceLabels: cons!USR_ENGINEERING_SKILLS_LIST, 
+                choiceValues: cons!USR_ENGINEERING_SKILLS_LIST, 
+                value:local!engSkill, 
+                saveInto:{
+                  local!engSkill, 
+                  a!save(local!pagingInfoForEngGrid.startIndex,1)
+                }
+              ),
+              a!dropdownField(
+                label:"",
+                labelPosition:"COLLAPSED",
+                placeholderLabel:"All Skill Levels", 
+                choiceLabels: cons!USR_ENGINEERING_TECHNICAL_SKILL_LEVELS, 
+                choiceValues: cons!USR_ENGINEERING_TECHNICAL_SKILL_LEVELS, 
+                value:local!engSkillLevel, 
+                saveInto:{
+                  local!engSkillLevel, 
+                  a!save(local!pagingInfoForEngGrid.startIndex,1)
+                }
+              ),
+              if(local!datasubsetEngineering.totalCount=0,
+              a!gridField(label: "", totalCount: local!datasubsetEngineering.totalCount, emptyGridMessage: "No employees found",
+          columns: { a!gridTextColumn(label: "Employee Name",field: "username", data: {}),
+                     a!gridTextColumn(label: "Skill",field: "skill", data: {}),
+                     a!gridTextColumn(label: "Skill Level",field: "skillLevel", data: {}),
+                     a!gridTextColumn(label: "Experience",field: "experience", data: {}),
+                     a!gridTextColumn(label: "Skill Usage",field: "skillUsage", data: {}),
+                    a!gridTextColumn(label: "All Listed Skills",field: "skill",data: {})
+          },
+          value:local!pagingInfoForEngGrid,
+          saveInto:local!pagingInfoForEngGrid
+          ),
+              a!gridField(
+          label:"",
+          totalCount: local!datasubsetEngineering.totalCount,
+          emptyGridMessage: "No employees found",
+          columns: {
+            a!gridTextColumn(
+              label: "Employee Name",
+              field: "username",
+                    data: if(rule!APN_isEmpty(index(local!datasubsetEngineering.data, "username", null)),{},
+              apply(rule!APN_displayUser(_), index(local!datasubsetEngineering.data, "username", null))),
+                    links: {
+                      if(rule!APN_isEmpty(index(local!datasubsetEngineering.data, "username", null)), {},
+                      apply(a!userRecordLink(
+                      label:"",
+                      user: _,
+                      view: "summary"
+                      ), index(local!datasubsetEngineering.data, "username", null)))}
+            ),
+             a!gridTextColumn(
+              label: "Skill",
+              field: "skill",
+              data: index(local!datasubsetEngineering.data, "skill", null)
+            ),
+               a!gridTextColumn(
+              label: "Skill Level",
+              field: "skillLevel",
+              data: index(local!datasubsetEngineering.data, "skillLevel", null)
+            ),
+              a!gridTextColumn(
+              label: "Experience",
+              field: "experience",
+              data:index(local!datasubsetEngineering.data, "experience", null)
+            ),
+             a!gridTextColumn(
+              label: "Skill Usage",
+              field: "skillUsage",
+              data: index(local!datasubsetEngineering.data, "skillUsage", null)
+            ),
+            a!gridImageColumn(
+          label: "All Listed Skills",
+          field: "skill",
+          size: "ICON",
+          /*Show tooltip on mouseover with all skills in DB for that user*/
+          data: apply(a!documentImage(document:_, caption:_, link: _),
+			  merge(
+				apply(rule!ABA_returnDisplayOrNullIcon,index(local!datasubsetEngineering.data, "skill", null) ,cons!ABA_INFO_ICON,a!iconIndicator("REMOVE_DISABLED")),
+				
+				a!applyComponents(rule!USR_applyTooltipTextToAllSkillsAndLevelsForEng(username: _, datasubsetForToolTip: local!datasubsetEngineeringForToolTip), 
+				                index(local!datasubsetEngineering.data, "username", null)), 
+				  
+				apply(a!userRecordLink(label:"",user: _,view: "_3YQ6Sg"), index(local!datasubsetEngineering.data, "username", null))
+				))) 
+        },
+          value:local!pagingInfoForEngGrid,
+          saveInto:local!pagingInfoForEngGrid
+        ))
+            }
+          )
+          /*END OF ENG SKILLS SECTION*/
+         }
+         
+       )
+  )
+), dep_types=[Ljava.lang.String;@594ef032, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@1dd7ba98, dep_variables=[[Ljava.lang.String;@625373a4},partition=3,partitionName=/usr/local/appian/ae/_admin/accdocs3]
+2015-11-18 20:50:19.841 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: FreeformRule.forum
+2015-11-18 20:50:19.842 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: FreeformRule.parent
+2015-11-18 20:50:19.846 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@68caa276[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2015-11-18 20:50:19.846 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.846 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.846 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2015-11-18 20:50:19.846 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.846 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.846 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2015-11-18 20:50:19.847 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Exporting binary resources.
+2015-11-18 20:50:19.847 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Serializing object to XML.
+2015-11-18 20:50:19.863 DEBUG content 221892 _a-0000dbff-8321-8000-9ba2-011c48011c48_216465 Object transported.
+2015-11-18 20:50:19.866 DEBUG tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba Begin transport.
+2015-11-18 20:50:19.866 DEBUG tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba Retrieving object data.
+2015-11-18 20:50:19.895 DEBUG tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba Setting uuids of object references.
+2015-11-18 20:50:19.895 DEBUG tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba Processing reference: UiContainer.uiExpr
+2015-11-18 20:50:19.897 DEBUG tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba Exporting binary resources.
+2015-11-18 20:50:19.897 DEBUG tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba Serializing object to XML.
+2015-11-18 20:50:19.908 DEBUG tempoReport 87 d147e7d7-de7c-40c6-a3b2-bbd818c6e0ba Object transported.
